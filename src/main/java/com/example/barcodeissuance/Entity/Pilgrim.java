@@ -1,26 +1,30 @@
-package com.example.barcodeissuance.Entity;
+	package com.example.barcodeissuance.Entity;
 
-import java.util.Date;
+	import java.time.LocalDateTime;
+	import java.util.UUID;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+	import jakarta.persistence.Entity;
+	import jakarta.persistence.Id;
+	import lombok.*;
+	import org.hibernate.annotations.CreationTimestamp;
 
-@Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-public class Pilgrim {
-	
-	@Id
-	private String uuid;
-	private String name;
-	private String gender;
-	private Long adhaarNo;
-	private Integer age;
-	private Date createdDate;
-	
+	@Entity
+	@AllArgsConstructor
+	@NoArgsConstructor
+	@Data
+	@Getter
+	@Setter
+	public class Pilgrim {
 
-}
+		@Id
+		private UUID uuid;
+		private String name;
+		private String gender;
+		private Long adhaarNo;
+		private Integer age;
+		@CreationTimestamp
+		private LocalDateTime createdDate;
+
+
+
+	}
